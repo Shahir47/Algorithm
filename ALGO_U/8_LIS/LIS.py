@@ -19,7 +19,7 @@ def LIS(arr, prev, start):
     return best
 
 
-#Iterative Solution ----------------------------------------------------
+#Dynamic Programming ----------------------------------------------------
 
 def LIS_Iterative(arr):
     arr.insert(0, -math.inf)

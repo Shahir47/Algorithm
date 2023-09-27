@@ -15,7 +15,7 @@ def LCS(arr1, arr2, s1, s2):
     
     return best
 
-#Iterative Solution -------------------------------------------------------
+#Dynamic Programming -------------------------------------------------------
 def LCS_Iterative(arr1, arr2):
     n = len(arr1) + 1
     m = len(arr2) + 1
