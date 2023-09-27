@@ -20,3 +20,4 @@ def LIS(arr, prev, start, mem):
 myArr = [10,5,9,6,8,3,12]
 mem = [[None]*(len(myArr)+1) for i in range(len(myArr))] #[prev][start]
 print(LIS(myArr, -math.inf, 0, mem))
+print(mem)
