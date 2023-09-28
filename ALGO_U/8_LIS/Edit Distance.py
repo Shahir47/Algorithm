@@ -34,10 +34,15 @@ def DP(A, B):
 
             mem[curB][curA] = min(insert, delete, substitute)
     
+    for i in range(len(mem)):
+        for j in range(len(mem[0])):
+            print(mem[i][j], end=" ")
+        print()
+
     return mem[m-1][n-1]
 
-x = "ALGORITHM"
-y = "ALTRUISTIC"
+x = "FOOD"
+y = "MONEY"
 arr1 = list(x)
 arr2 = list(y)
 
