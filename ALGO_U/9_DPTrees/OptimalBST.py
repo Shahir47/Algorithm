@@ -12,8 +12,40 @@ def optimal_bst(A, F, i, j):
 
     return best + s
 
+# Dynamic Programming -----------------------------------------------------------
+import math
 
+def DP(A, F):
+    n = len(A)
+    mem = [[0]*n for i in range(n)]
+
+    for i in range(n):
+        mem[i][i] = F[i]
+
+    for i in range(n-2, -1, -1):
+        for j in range(i+1, n):
+            best = math.inf
+            s = 0
+            for r in range(i, j+1):
+                s += F[r]
+                if r-1<0:
+                    best = min(best, mem[r+1][j])
+                elif r+1>=n:
+                    best = min(best, mem[i][r-1])
+                else:
+                    best = min(best, mem[i][r-1]+mem[r+1][j])
+            mem[i][j] = best + s
+
+    for i in range(len(mem)):
+        for j in range(len(mem[0])):
+            print(mem[i][j], end=" ")
+        print()
+
+    return mem[0][n-1]
 
 A = [2,5,7,8,14]
-F = [1,11,1,10,9]
-print(optimal_bst(A, F, 0, len(A)-1))
+F = [100,2,4,10,4]
+
+#print(optimal_bst(A, F, 0, len(A)-1))
+
+print(DP(A, F))
