@@ -19,7 +19,6 @@ def ParaFormat(ip, k, start, curr):
 
 
 
-
 # ip = [3, 3, 2, 2, 2, 11] #abc def gh ij kl mnopqrstuvw
 # k = 13
 
