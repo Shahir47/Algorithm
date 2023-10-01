@@ -23,8 +23,8 @@ def ParaFormat(ip, k, start, curr):
 # ip = [3, 3, 2, 2, 2, 11] #abc def gh ij kl mnopqrstuvw
 # k = 13
 
-ip = [3,2,2,5] #abc def gh ij kl mnopqrstuvw
-k = 6
+ip = [3,2,4,7] #abc def gh ij kl mnopqrstuvw
+k = 10
 print(ParaFormat(ip, k, 0, 0))
 
 
