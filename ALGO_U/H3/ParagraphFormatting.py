@@ -5,7 +5,8 @@ def ParaFormat(ip, k, start, curr):
     sum = 0
 
     if curr+ip[start]+1 > k:
-        sum = ParaFormat(ip, k, start+1, ip[start])
+        if start < mx:
+            sum = ParaFormat(ip, k, start+1, ip[start])
         return sum + (k-curr)**3
 
     if curr == 0:
@@ -17,13 +18,32 @@ def ParaFormat(ip, k, start, curr):
         return sum
         
 
+def max_last(ip, k):
+    sum_ = ip[len(ip)-1]
+    for i in range(len(ip)-2, -1, -1):
+        sum_ += ip[i] + 1
+        if(sum_ > k):
+            break
+    return i+1
 
-
-# ip = [3, 3, 2, 2, 2, 11] #abc def gh ij kl mnopqrstuvw
-# k = 13
+ip = [3, 3, 2, 2, 2, 11] #abc def gh ij kl mnopqrstuvw
+k = 13
+mx = max_last(ip.copy(), k)
+print(ParaFormat(ip, k, 0, 0))
 
 ip = [3,2,4,7] #abc def gh ij kl mnopqrstuvw
 k = 10
+mx = max_last(ip.copy(), k)
+print(ParaFormat(ip, k, 0, 0))
+
+ip = [3,2,2] #abc def gh ij kl mnopqrstuvw
+k = 6
+mx = max_last(ip.copy(), k)
+print(ParaFormat(ip, k, 0, 0))
+
+ip = [3,2,2, 3, 3] #abc def gh ij kl mnopqrstuvw
+k = 11
+mx = max_last(ip.copy(), k)
 print(ParaFormat(ip, k, 0, 0))
 
 
