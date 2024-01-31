@@ -1,1 +1,1 @@
-# Algo_Obsidian_Git
+# Algorithm
